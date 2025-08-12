@@ -1,41 +1,108 @@
-[![RealWorld Frontend](https://img.shields.io/badge/realworld-frontend-%23783578.svg)](http://realworld.io)
-[![Build Status](https://travis-ci.org/gothinkster/angular-realworld-example-app.svg?branch=master)](https://travis-ci.org/gothinkster/angular-realworld-example-app)
+# Conduit Frontend Project
 
-# ![Angular Example App](logo.png)
+## Table of Contents
 
-> ### Angular codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the [RealWorld](https://github.com/gothinkster/realworld-example-apps) spec and API.
+1. [Introduction](#Introduction)
+2. [Prerequisites](#Prerequisites)
+3. [Quickstart](#Quickstart)
+4. [Usage](#Usage)
+   - [Installation with Docker](#Installation-with-Docker)
+     - [Stop-Container](#Stop-Container)
+     - [Delete-Container](#Delete-Container)
 
-<a href="https://stackblitz.com/edit/angular-realworld" target="_blank"><img width="187" src="https://github.com/gothinkster/realworld/blob/master/media/edit_on_blitz.png?raw=true" /></a>&nbsp;&nbsp;<a href="https://thinkster.io/tutorials/building-real-world-angular-2-apps" target="_blank"><img width="384" src="https://raw.githubusercontent.com/gothinkster/realworld/master/media/learn-btn-hr.png" /></a>
+## Introduction
 
-### [Demo](https://angular.realworld.io)&nbsp;&nbsp;&nbsp;&nbsp;[RealWorld](https://github.com/gothinkster/realworld)
+This is a Readme Description of our Conduit Project.The Conduit is a Clone of <a href=https://medium.com/>Medium.com<a>
 
-This codebase was created to demonstrate a fully fledged application built with Angular that interacts with an actual backend server including CRUD operations, authentication, routing, pagination, and more. We've gone to great lengths to adhere to the [Angular Styleguide](https://angular.io/styleguide) & best practices.
+## Prerequisites
 
-Additionally, there is an Angular 1.5 version of this codebase that you can [fork](https://github.com/gothinkster/angularjs-realworld-example-app) and/or [learn how to recreate](https://thinkster.io/angularjs-es6-tutorial).
+To Deploy your Conduit Frontend Project, you need the following:
 
-# How it works
+- Docker
+- Pyenv
 
-We're currently working on some docs for the codebase (explaining where functionality is located, how it works, etc) but the codebase should be straightforward to follow as is. We've also released a [step-by-step tutorial w/ screencasts](https://thinkster.io/tutorials/building-real-world-angular-2-apps) that teaches you how to recreate the codebase from scratch.
+## Quickstart:
 
-### Making requests to the backend API
+1. Clone the following Repository:
 
-For convenience, we have a live API server running at https://conduit.productionready.io/api for the application to make requests against. You can view [the API spec here](https://github.com/GoThinkster/productionready/blob/master/api) which contains all routes & responses for the server.
+```bash
+git clone git@github.com:HerzogElias/conduit-frontend.git
+```
 
-The source code for the backend server (available for Node, Rails and Django) can be found in the [main RealWorld repo](https://github.com/gothinkster/realworld).
+2.Navigate to the correct Directory:
 
-If you want to change the API URL to a local server, simply edit `src/environments/environment.ts` and change `api_url` to the local server's URL (i.e. `localhost:3000/api`). Please note you will probably need to use a proxy in order to avoid Cross-Origin Resource (CORS) issues. (more info: [Proxying to a backend server](https://angular.io/guide/build#proxying-to-a-backend-server) )
+```bash
+cd conduit-frontend
+```
 
-# Getting started
+3. Start a lockal Dev Server:
 
-Make sure you have the [Angular CLI](https://github.com/angular/angular-cli#installation) installed globally. We use [Yarn](https://yarnpkg.com) to manage the dependencies, so we strongly recommend you to use it. you can install it from [Here](https://yarnpkg.com/en/docs/install), then run `yarn install` to resolve all dependencies (might take a minute).
+```bash
+ng serve --open
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+4. Open your local Frontend
 
-### Building the project
+```bash
+<localhost:4200>
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## Usage
 
-## Functionality overview
+### Installation-with-Docker
+
+1. Clone the following Repository:
+
+```bash
+git clone git@github.com:HerzogElias/conduit-frontend.git
+```
+
+2.Navigate to the correct Directory:
+
+```bash
+cd conduit-frontend
+```
+
+3. Build your Dockerfile
+
+```bash
+docker build -t angular-conduit:latest .
+```
+
+4. Run your Docker Image:
+
+```bash
+docker run -d \
+  --name angular-conduit \
+  -p 8080:80 \
+  angular-conduit:latest
+```
+
+5.You can start on Localhost:
+
+```bash
+http://localhost:8080
+```
+
+#### Stop-Container
+
+Stop the Container with:
+
+```bash
+docker stop <container-name>
+```
+
+#### Delete-Container
+
+After Stopping the Container you can delete this Container:
+
+```bash
+docker rm <container-name>
+```
+
+## Functions
+
+### Functionality overview
 
 The example application is a social blogging site (i.e. a Medium.com clone) called "Conduit". It uses a custom API for all requests, including authentication. You can view a live demo over at https://angular.realworld.io
 
@@ -72,3 +139,11 @@ The example application is a social blogging site (i.e. a Medium.com clone) call
 <br />
 
 [![Brought to you by Thinkster](https://raw.githubusercontent.com/gothinkster/realworld/master/media/end.png)](https://thinkster.io)
+
+### Making requests to the backend API
+
+For convenience, we have a live API server running at https://conduit.productionready.io/api for the application to make requests against. You can view [the API spec here](https://github.com/GoThinkster/productionready/blob/master/api) which contains all routes & responses for the server.
+
+The source code for the backend server (available for Node, Rails and Django) can be found in the [main RealWorld repo](https://github.com/gothinkster/realworld).
+
+If you want to change the API URL to a local server, simply edit `src/environments/environment.ts` and change `api_url` to the local server's URL (i.e. `localhost:3000/api`). Please note you will probably need to use a proxy in order to avoid Cross-Origin Resource (CORS) issues. (more info: [Proxying to a backend server](https://angular.io/guide/build#proxying-to-a-backend-server) )
