@@ -7,8 +7,8 @@
 3. [Quickstart](#Quickstart)
 4. [Usage](#Usage)
    - [Installation with Docker](#Installation-with-Docker)
-     - [Stop-Container](#Stop-Container)
-     - [Delete-Container](#Delete-Container)
+   - [Stop-Container](#Stop-Container)
+   - [Delete-Container](#Delete-Container)
 
 ## Introduction
 
@@ -63,13 +63,15 @@ git clone git@github.com:HerzogElias/conduit-frontend.git
 cd conduit-frontend
 ```
 
-3. Build your Dockerfile
+3.
+
+4.  Build your Dockerfile
 
 ```bash
 docker build -t angular-conduit:latest .
 ```
 
-4. Run your Docker Image:
+5. Run your Docker Image:
 
 ```bash
 docker run -d \
@@ -78,7 +80,7 @@ docker run -d \
   angular-conduit:latest
 ```
 
-5.You can start on Localhost:
+6.You can start on Localhost:
 
 ```bash
 http://localhost:8080
