@@ -35,7 +35,7 @@ git clone git@github.com:HerzogElias/conduit-frontend.git
 cd conduit-frontend
 ```
 
-3. Start a lockal Dev Server:
+3. Start a local Dev Server:
 
 ```bash
 ng serve --open
