@@ -9,7 +9,7 @@ COPY . .
 
 RUN npm run build -- --configuration production
 
-FROM nginx:stable-alpine
+FROM nginx:1.25.2-alpine
 
 RUN rm -rf /usr/share/nginx/html/*
 
