@@ -7,8 +7,12 @@
 3. [Quickstart](#Quickstart)
 4. [Usage](#Usage)
    - [Installation with Docker](#Installation-with-Docker)
-   - [Stop-Container](#Stop-Container)
-   - [Delete-Container](#Delete-Container)
+   - [Stop Container](#Stop-Container)
+   - [Delete Container](#Delete-Container)
+5. [Functions](#Functions)
+   - [CI CD Pipeline](#CI-CD-Pipeline)
+   - [Functionality Overview](#Functionality-overview)
+   - [Making Requests to the Backend API](#Making-requests-to-the-backend-API)
 
 ## Introduction
 
@@ -101,6 +105,31 @@ docker rm <container-name>
 ```
 
 ## Functions
+
+### CI CD Pipeline
+
+This project uses **GitHub Actions** to automate building and pushing Docker images to GitHub Container Registry (GHCR). The workflow runs on every push to `main` or manually via workflow dispatch.
+
+**Pipeline Steps:**
+
+1. **Checkout Repository**  
+   Checks out the latest code from the repository.
+
+2. **Login to GitHub Container Registry**  
+   Authenticates with GHCR using the repository owner's credentials and GitHub token for image pushes.
+
+3. **Setup QEMU for Multi-Architecture Support**  
+   Prepares the environment to build Docker images for multiple CPU architectures (`amd64` and `arm64`).
+
+4. **Setup Docker Buildx**  
+   Configures Docker Buildx for multi-platform builds.
+
+5. **Build and Push Docker Image**  
+   Builds the Docker image for multiple architectures and pushes it to GHCR with the tag:
+
+   ```bash
+   ghcr.io/herzogelias/conduit-frontend:latest
+   ```
 
 ### Functionality overview
 
