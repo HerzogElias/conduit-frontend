@@ -108,7 +108,7 @@ docker rm <container-name>
 
 ### CI CD Pipeline
 
-This project uses **GitHub Actions** to automate building and pushing Docker images to GitHub Container Registry (GHCR). The workflow runs on every push to `main` or manually via workflow dispatch.
+This project uses **GitHub Actions** to automate building and pushing Docker images to GitHub Container Registry (GHCR). The workflow runs on every push to `master` or manually via workflow dispatch.
 
 **Pipeline Steps:**
 
